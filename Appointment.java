@@ -15,9 +15,9 @@ public class Appointment {
         this.patient = patient;
         this.doctor = doctor;
         this.nurse = nurse;
-    }
-
-    public String getAppointmentID() {
+    } 
+    
+    public  String getappointmentID() {
         return appointmentID;
     }
 
@@ -27,6 +27,22 @@ public class Appointment {
 
     public String getStatus() {
         return status;
+    }
+
+    public Patient getPatient() {
+        return patient;
+    }
+
+    public Doctor getDoctor() {
+        return doctor;
+    }
+
+    public Nurse getNurse() {
+        return nurse;
+    }
+
+    public String getAppointmentID() {
+        return appointmentID;
     }
 
     public void updateAppointment(String newTime) {

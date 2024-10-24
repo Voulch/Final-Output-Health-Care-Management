@@ -65,6 +65,9 @@ public class Controller implements ISchedule, IUpdate, ICancel, ISearch, IFilter
         Appointment appointment = new Appointment(appointmentID, time, patient, doctor, nurse);
         String result = manager.addAppointment(appointment);
         System.out.println(result);
+
+        MedicalLog medicalLog = new MedicalLog(appointment);
+        manager.addMedicalLog(medicalLog); 
     }
 
     @Override
@@ -151,8 +154,17 @@ public class Controller implements ISchedule, IUpdate, ICancel, ISearch, IFilter
     @Override
     public void display() {
         LinkedList<MedicalLog> medicalLogs = manager.getMedicalLogs();
-        for (MedicalLog log : medicalLogs) {
-            log.displayLog();
+        if (medicalLogs != null) {
+            System.out.println("Number of medical logs: " + medicalLogs.size());
+            for (MedicalLog log : medicalLogs) {
+                if (log != null) {
+                    log.displayLog();
+                } else {
+                    System.out.println("Found a null MedicalLog object");
+                }
+            }
+        } else {
+            System.out.println("Medical logs list is null");
         }
     }
- }
+}

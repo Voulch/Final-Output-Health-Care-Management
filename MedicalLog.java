@@ -6,11 +6,11 @@ public class MedicalLog {
     private final Doctor doctor;
     private Nurse nurse;
 
-    public MedicalLog(String logId, Patient patient, Doctor doctor, Nurse nurse) {
-        this.logId = logId;
-        this.patient = patient;
-        this.doctor = doctor;
-        this.nurse = nurse;
+    public MedicalLog(Appointment appointment) {
+        this.logId = appointment.getAppointmentID();
+        this.patient = appointment.getPatient();
+        this.doctor = appointment.getDoctor();
+        this.nurse = appointment.getNurse();
     }
 
     public void addStaff(Nurse nurse) {
@@ -21,6 +21,7 @@ public class MedicalLog {
         System.out.println("\n============= Medical Log =============");
         System.out.println("\nLog ID: " + logId);
         System.out.println("Patient ID: " + patient.getId());
+        System.out.println("Patient Name: " + patient.getName());
         System.out.println("Doctor: " + doctor.getName());
         System.out.println("Nurse: " + nurse.getName());
         System.out.println("\n=======================================");
