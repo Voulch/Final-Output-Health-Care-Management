@@ -1,6 +1,6 @@
 Project 4: Healthcare Management System
 
-Group #7
+Group #3
 
 Sese, Jacob
 
